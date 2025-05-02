@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <img 
-                src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210420155809/gfg-new-logo.png" 
+                src="/images/branding/gfg-logo.png" 
                 alt="GeeksforGeeks Logo" 
                 className="h-8 w-auto"
               />
@@ -252,14 +252,36 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8 text-center">
-          <p 
-            className={`text-sm ${
-              theme === "cyberpunk" ? "text-gray-400" : "text-muted-foreground"
-            }`}
-          >
-            &copy; {year} GeeksforGeeks LPU Chapter. All rights reserved.
-          </p>
+        {/* Developer Information */}
+        <div className="mt-12 border-t pt-8">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="text-center md:text-left">
+              <p 
+                className={`text-sm ${
+                  theme === "cyberpunk" ? "text-gray-400" : "text-muted-foreground"
+                }`}
+              >
+                &copy; {year} GeeksforGeeks LPU Chapter. All rights reserved.
+              </p>
+            </div>
+            <div className="text-center md:text-right">
+              <p 
+                className={`text-sm ${
+                  theme === "cyberpunk" ? "text-gray-400" : "text-muted-foreground"
+                }`}
+              >
+                Designed & Developed by{" "}
+                <a 
+                  href="https://github.com/gfg-lpu-devs" 
+                  className={theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GFG LPU Web Team
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

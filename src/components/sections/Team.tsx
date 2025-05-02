@@ -1,42 +1,73 @@
 
 import { useTheme } from "../ThemeContext";
+import { Github, Linkedin, Instagram } from "lucide-react";
 
 const teamMembers = [
   {
     id: 1,
     name: "Ankit Sharma",
     role: "Chapter Lead",
-    image: "https://i.pravatar.cc/300?img=1",
+    image: "/images/team/ankit-sharma.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/ankit-sharma",
+      github: "https://github.com/ankit-sharma",
+      instagram: "https://instagram.com/ankit-sharma",
+    }
   },
   {
     id: 2,
     name: "Priya Singh",
     role: "Technical Lead",
-    image: "https://i.pravatar.cc/300?img=5",
+    image: "/images/team/priya-singh.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/priya-singh",
+      github: "https://github.com/priya-singh",
+      instagram: "https://instagram.com/priya-singh",
+    }
   },
   {
     id: 3,
     name: "Rahul Verma",
     role: "Event Coordinator",
-    image: "https://i.pravatar.cc/300?img=3",
+    image: "/images/team/rahul-verma.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/rahul-verma",
+      github: "https://github.com/rahul-verma",
+      instagram: "https://instagram.com/rahul-verma",
+    }
   },
   {
     id: 4,
     name: "Neha Patel",
     role: "Marketing Lead",
-    image: "https://i.pravatar.cc/300?img=10",
+    image: "/images/team/neha-patel.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/neha-patel",
+      github: "https://github.com/neha-patel",
+      instagram: "https://instagram.com/neha-patel",
+    }
   },
   {
     id: 5,
     name: "Vikram Kumar",
     role: "Content Creator",
-    image: "https://i.pravatar.cc/300?img=12",
+    image: "/images/team/vikram-kumar.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/vikram-kumar",
+      github: "https://github.com/vikram-kumar",
+      instagram: "https://instagram.com/vikram-kumar",
+    }
   },
   {
     id: 6,
     name: "Shweta Jain",
     role: "Design Head",
-    image: "https://i.pravatar.cc/300?img=9",
+    image: "/images/team/shweta-jain.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/shweta-jain",
+      github: "https://github.com/shweta-jain",
+      instagram: "https://instagram.com/shweta-jain",
+    }
   },
 ];
 
@@ -110,30 +141,33 @@ const Team = () => {
                     >
                       {member.role}
                     </p>
-                    <div className="mt-4 flex justify-center space-x-3">
+                    <div className="mt-4 flex justify-center space-x-4">
                       <a 
-                        href="#" 
+                        href={member.social.linkedin} 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={theme === "cyberpunk" ? "text-gray-400 hover:text-cyber-green" : "text-gray-500 hover:text-primary"}
+                        aria-label={`LinkedIn profile of ${member.name}`}
                       >
-                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325v21.351C0 23.407 0.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463 0.099 2.795 0.143v3.24l-1.918 0.001c-1.504 0-1.795 0.715-1.795 1.763v2.313h3.587l-0.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0z" />
-                        </svg>
+                        <Linkedin className="h-5 w-5" />
                       </a>
                       <a 
-                        href="#" 
+                        href={member.social.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={theme === "cyberpunk" ? "text-gray-400 hover:text-cyber-green" : "text-gray-500 hover:text-primary"}
+                        aria-label={`GitHub profile of ${member.name}`}
                       >
-                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                        </svg>
+                        <Github className="h-5 w-5" />
                       </a>
                       <a 
-                        href="#" 
+                        href={member.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer" 
                         className={theme === "cyberpunk" ? "text-gray-400 hover:text-cyber-green" : "text-gray-500 hover:text-primary"}
+                        aria-label={`Instagram profile of ${member.name}`}
                       >
-                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z" fillRule="evenodd" clipRule="evenodd" />
-                        </svg>
+                        <Instagram className="h-5 w-5" />
                       </a>
                     </div>
                   </div>

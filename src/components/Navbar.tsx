@@ -1,11 +1,13 @@
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
-import { Sun, Moon, Zap, Link as LinkIcon } from "lucide-react";
+import { Menu, X, Sun, Moon, Zap, Link as LinkIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleThemeToggle = () => {
     if (theme === "light") {
@@ -19,12 +21,28 @@ const Navbar = () => {
     setTheme(theme === "cyberpunk" ? "dark" : "cyberpunk");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Navigation items
+  const navItems = [
+    { name: "Home", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Achievements", href: "#achievements" },
+    { name: "Team", href: "#team" },
+    { name: "Events", href: "#events" },
+    { name: "Collaborate", href: "#collaborate" },
+    { name: "Gallery", href: "#gallery" }
+  ];
+
   return (
     <header className="sticky top-0 z-50 w-full border-b backdrop-blur-lg transition-all">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        {/* Logo and Chapter Name */}
         <div className="flex items-center gap-2">
           <img 
-            src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210420155809/gfg-new-logo.png" 
+            src="/images/branding/gfg-logo.png" 
             alt="GeeksforGeeks Logo" 
             className="h-8 w-auto"
           />
@@ -33,24 +51,27 @@ const Navbar = () => {
           </span>
         </div>
         
+        {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {["Home", "About", "Achievements", "Team", "Events", "Collaborate", "Gallery"].map((item) => (
-              <li key={item}>
-                <Link
-                  to={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     theme === "cyberpunk" ? "neon-text-blue" : ""
                   }`}
                 >
-                  {item}
-                </Link>
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
         
+        {/* Action Buttons */}
         <div className="flex items-center space-x-3">
+          {/* Theme Toggle */}
           <Button
             variant="outline"
             size="icon"
@@ -61,6 +82,7 @@ const Navbar = () => {
             {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
           </Button>
           
+          {/* Cyberpunk Mode Toggle */}
           <Button
             variant="outline"
             size="sm"
@@ -75,6 +97,7 @@ const Navbar = () => {
             {theme === "cyberpunk" ? "Present" : "Future"}
           </Button>
           
+          {/* GeekPoints Link */}
           <Button 
             variant="default" 
             size="sm" 
@@ -86,8 +109,41 @@ const Navbar = () => {
               GeekPoints
             </a>
           </Button>
+          
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </Button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className={`md:hidden ${theme === "cyberpunk" ? "bg-cyber-dark/95" : "bg-background/95"} backdrop-blur-lg`}>
+          <nav className="container px-4 py-3">
+            <ul className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className={`block text-lg font-medium transition-colors hover:text-primary ${
+                      theme === "cyberpunk" ? "neon-text-blue" : ""
+                    }`}
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

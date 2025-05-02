@@ -1,54 +1,55 @@
 
-import { Button } from "@/components/ui/button";
 import { useTheme } from "../ThemeContext";
-import { CalendarIcon, Clock, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
+// Sample events data - can be expanded to include more events
 const events = [
   {
     id: 1,
-    title: "Web Development Workshop",
-    date: "May 10, 2025",
-    time: "10:00 AM - 1:00 PM",
-    location: "Block 32 Auditorium, LPU",
-    description: "Learn modern web development techniques with React and Node.js.",
-    imageUrl: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210310114057/web-development-image.png",
+    title: "Code Wizards Workshop",
+    date: "May 15, 2025",
+    location: "Block 32, Room 205, LPU",
+    image: "/images/events/code-wizards.jpg",
+    description: "Learn about algorithms and data structures with hands-on coding exercises.",
+    registrationLink: "#"
   },
   {
     id: 2,
-    title: "Competitive Programming Contest",
-    date: "May 15, 2025",
-    time: "2:00 PM - 6:00 PM",
-    location: "Online (Zoom)",
-    description: "Test your coding skills in this competitive programming challenge.",
-    imageUrl: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201119113313/How-to-Solve-any-Competitive-Programming-Problem.png",
+    title: "Web Development Bootcamp",
+    date: "May 20, 2025",
+    location: "Block 38, Room 103, LPU",
+    image: "/images/events/web-dev.jpg",
+    description: "Intensive workshop on modern web development techniques and frameworks.",
+    registrationLink: "#"
   },
   {
     id: 3,
-    title: "Machine Learning Bootcamp",
-    date: "May 25, 2025",
-    time: "9:00 AM - 5:00 PM",
-    location: "Block 38 Lab Complex, LPU",
-    description: "A full-day intensive bootcamp on machine learning fundamentals and applications.",
-    imageUrl: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230118112545/MachineLearning_1.png",
-  },
+    title: "Hackathon 2025",
+    date: "June 5-7, 2025",
+    location: "Uni Mall, LPU",
+    image: "/images/events/hackathon.jpg",
+    description: "48-hour coding competition with exciting prizes and networking opportunities.",
+    registrationLink: "#"
+  }
 ];
 
 const Events = () => {
   const { theme } = useTheme();
 
   return (
-    <section id="events" className="py-16 md:py-24 bg-muted/50">
+    <section id="events" className="py-16 md:py-24 bg-muted/30">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div 
               className={`inline-block rounded-lg px-3 py-1 text-sm ${
                 theme === "cyberpunk" 
-                  ? "bg-cyber-dark border border-cyber-orange text-cyber-orange" 
+                  ? "bg-cyber-dark border border-cyber-blue text-cyber-blue" 
                   : "bg-primary/10 text-primary"
               }`}
             >
-              What's On
+              Calendar
             </div>
             <h2 
               className={`text-3xl font-bold tracking-tight md:text-4xl ${
@@ -62,109 +63,57 @@ const Events = () => {
                 theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
               }`}
             >
-              Join us for these exciting events and enhance your skills.
+              Join us for exciting events, workshops, and competitions.
             </p>
           </div>
         </div>
 
         <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
-          {events.map((event) => (
-            <div 
+          {events.map(event => (
+            <Card 
               key={event.id}
-              className={`overflow-hidden rounded-xl ${
-                theme === "cyberpunk" 
-                  ? "border-2 border-cyber-purple shadow-lg shadow-cyber-purple/20" 
-                  : "border border-border shadow-sm"
-              }`}
+              className={theme === "cyberpunk" ? "bg-cyber-dark border-cyber-purple/30" : ""}
             >
-              <div className="relative">
+              <div className="relative aspect-video overflow-hidden rounded-t-lg">
                 <img 
-                  src={event.imageUrl} 
+                  src={event.image} 
                   alt={event.title}
-                  className="h-48 w-full object-cover"
+                  className="h-full w-full object-cover transition-transform hover:scale-105"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/images/events/placeholder.jpg";
+                  }}
                 />
-                {theme === "cyberpunk" && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark to-transparent opacity-60"></div>
-                )}
-                <div 
-                  className={`absolute bottom-0 left-0 right-0 p-4 ${
-                    theme === "cyberpunk" ? "bg-gradient-to-t from-cyber-dark to-transparent" : "bg-gradient-to-t from-black/60 to-transparent"
+              </div>
+              <CardContent className="p-6">
+                <div className="mb-4 text-sm text-muted-foreground">
+                  <span className={theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}>{event.date}</span>
+                  <span className="mx-2">•</span>
+                  <span>{event.location}</span>
+                </div>
+                <h3 
+                  className={`text-xl font-bold mb-2 ${
+                    theme === "cyberpunk" ? "text-cyber-pink" : ""
                   }`}
                 >
-                  <h3 
-                    className={`text-xl font-bold text-white ${
-                      theme === "cyberpunk" ? "neon-text-blue" : ""
-                    }`}
-                  >
-                    {event.title}
-                  </h3>
-                </div>
-              </div>
-              <div 
-                className={theme === "cyberpunk" ? "bg-cyber-dark p-6" : "bg-card p-6"}
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm">
-                    <CalendarIcon 
-                      className={`mr-1 h-4 w-4 ${
-                        theme === "cyberpunk" ? "text-cyber-orange" : "text-primary"
-                      }`} 
-                    />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <Clock 
-                      className={`mr-1 h-4 w-4 ${
-                        theme === "cyberpunk" ? "text-cyber-orange" : "text-primary"
-                      }`} 
-                    />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center text-sm">
-                    <MapPin 
-                      className={`mr-1 h-4 w-4 ${
-                        theme === "cyberpunk" ? "text-cyber-orange" : "text-primary"
-                      }`} 
-                    />
-                    <span>{event.location}</span>
-                  </div>
-                  <p 
-                    className={`mt-2 text-sm ${
-                      theme === "cyberpunk" ? "text-gray-400" : "text-muted-foreground"
-                    }`}
-                  >
-                    {event.description}
-                  </p>
-                </div>
-                <div className="mt-6">
-                  <Button 
-                    className="w-full" 
-                    variant={theme === "cyberpunk" ? "outline" : "default"}
-                    style={theme === "cyberpunk" ? { 
-                      borderColor: '#D946EF', 
-                      color: '#D946EF',
-                      boxShadow: '0 0 5px #D946EF'
-                    } : {}}
-                  >
-                    Register Now
-                  </Button>
-                </div>
-              </div>
-            </div>
+                  {event.title}
+                </h3>
+                <p 
+                  className={`mb-4 ${
+                    theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
+                  }`}
+                >
+                  {event.description}
+                </p>
+                <Button 
+                  className={theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}
+                  asChild
+                >
+                  <a href={event.registrationLink}>Register Now</a>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button 
-            variant="outline"
-            className={`${
-              theme === "cyberpunk" 
-                ? "border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10" 
-                : ""
-            }`}
-          >
-            View All Events
-          </Button>
         </div>
       </div>
     </section>

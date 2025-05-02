@@ -105,7 +105,7 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="mx-auto grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mt-12">
+        <div className="mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12">
           {teamMembers.map((member) => (
             <div 
               key={member.id}
@@ -120,12 +120,16 @@ const Team = () => {
                   theme === "cyberpunk" ? "p-px" : "border border-border"
                 }`}
               >
-                <div className={theme === "cyberpunk" ? "bg-cyber-dark p-6" : "p-6"}>
-                  <div className="mx-auto h-40 w-40 overflow-hidden rounded-full">
+                <div className={theme === "cyberpunk" ? "bg-cyber-dark p-4 sm:p-6" : "p-4 sm:p-6"}>
+                  <div className="mx-auto h-28 w-28 sm:h-40 sm:w-40 overflow-hidden rounded-full">
                     <img 
                       src={member.image} 
                       alt={member.name}
                       className="h-full w-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/team/placeholder.jpg";
+                      }}
                     />
                   </div>
                   <div className="mt-4 text-center">

@@ -46,7 +46,7 @@ const galleryImages = [
 const Gallery = () => {
   const { theme } = useTheme();
   const [currentPage, setCurrentPage] = useState(0);
-  const imagesPerPage = 6;
+  const imagesPerPage = 3; // Show fewer images per page on mobile
   
   // Calculate total pages based on images array length
   const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
@@ -108,7 +108,7 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="h-64 w-full object-cover transition-transform group-hover:scale-110"
+                  className="h-48 sm:h-64 w-full object-cover transition-transform group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "/images/gallery/placeholder.jpg";
@@ -119,7 +119,7 @@ const Gallery = () => {
                     ? "bg-cyber-dark/80 backdrop-blur" 
                     : "bg-black/60 backdrop-blur-sm"
                 }`}>
-                  <p className="p-3 text-center text-sm text-white">
+                  <p className="py-2 px-3 text-center text-sm text-white">
                     {image.caption}
                   </p>
                 </div>
@@ -127,38 +127,36 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Pagination controls - only show if more than one page */}
-          {totalPages > 1 && (
-            <div className="mt-8 flex justify-center space-x-4">
-              <button
-                onClick={prevPage}
-                className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                  theme === "cyberpunk"
-                    ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                }`}
-                aria-label="Previous page"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <div className={`flex items-center ${
-                theme === "cyberpunk" ? "text-cyber-green" : "text-muted-foreground"
-              }`}>
-                {currentPage + 1} / {totalPages}
-              </div>
-              <button
-                onClick={nextPage}
-                className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                  theme === "cyberpunk"
-                    ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                }`}
-                aria-label="Next page"
-              >
-                <ChevronRight size={20} />
-              </button>
+          {/* Pagination controls */}
+          <div className="mt-8 flex justify-center space-x-4">
+            <button
+              onClick={prevPage}
+              className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                theme === "cyberpunk"
+                  ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
+                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              }`}
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <div className={`flex items-center ${
+              theme === "cyberpunk" ? "text-cyber-green" : "text-muted-foreground"
+            }`}>
+              {currentPage + 1} / {totalPages}
             </div>
-          )}
+            <button
+              onClick={nextPage}
+              className={`flex h-10 w-10 items-center justify-center rounded-full ${
+                theme === "cyberpunk"
+                  ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
+                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+              }`}
+              aria-label="Next page"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

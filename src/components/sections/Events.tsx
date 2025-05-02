@@ -85,11 +85,10 @@ const Events = () => {
                   }}
                 />
               </div>
-              <CardContent className="p-6">
-                <div className="mb-4 text-sm text-muted-foreground">
-                  <span className={theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}>{event.date}</span>
-                  <span className="mx-2">•</span>
-                  <span>{event.location}</span>
+              <CardContent className="p-4 sm:p-6">
+                <div className="mb-3 text-sm text-muted-foreground">
+                  <span className={`block ${theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}`}>{event.date}</span>
+                  <span className="block mt-1">{event.location}</span>
                 </div>
                 <h3 
                   className={`text-xl font-bold mb-2 ${
@@ -106,7 +105,7 @@ const Events = () => {
                   {event.description}
                 </p>
                 <Button 
-                  className={theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}
+                  className={`w-full sm:w-auto ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
                   asChild
                 >
                   <a href={event.registrationLink}>Register Now</a>

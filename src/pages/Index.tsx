@@ -10,6 +10,7 @@ import Events from "@/components/sections/Events";
 import Collaborate from "@/components/sections/Collaborate";
 import Gallery from "@/components/sections/Gallery";
 import Footer from "@/components/Footer";
+import DeveloperFooter from "@/components/DeveloperFooter";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -44,6 +45,9 @@ const Index = () => {
           <Gallery />
         </main>
         <Footer />
+        <div className="container px-4 md:px-6 mb-8">
+          <DeveloperFooter />
+        </div>
       </div>
     </ThemeProvider>
   );

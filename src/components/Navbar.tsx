@@ -61,6 +61,7 @@ const Navbar = () => {
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     theme === "cyberpunk" ? "neon-text-blue" : ""
                   }`}
+                  onClick={toggleMenu}
                 >
                   {item.name}
                 </a>
@@ -75,7 +76,7 @@ const Navbar = () => {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-full hidden sm:flex"
             onClick={handleThemeToggle}
             title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
           >
@@ -86,7 +87,7 @@ const Navbar = () => {
           <Button
             variant="outline"
             size="sm"
-            className={`rounded-full ${
+            className={`rounded-full hidden sm:flex ${
               theme === "cyberpunk" 
                 ? "border-cyber-green text-cyber-green animate-neon-pulse" 
                 : "border-gfg hover:border-gfg hover:text-gfg"
@@ -101,7 +102,7 @@ const Navbar = () => {
           <Button 
             variant="default" 
             size="sm" 
-            className={theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}
+            className={`hidden sm:flex ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
             asChild
           >
             <a href="https://geekpoints.app" target="_blank" rel="noopener noreferrer">
@@ -140,6 +141,45 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              
+              {/* Mobile menu buttons */}
+              <li className="pt-2 flex flex-col space-y-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleThemeToggle}
+                  className="justify-start"
+                >
+                  {theme === "light" ? <Moon size={16} className="mr-2" /> : <Sun size={16} className="mr-2" />}
+                  {theme === "light" ? "Dark Mode" : "Light Mode"}
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleFutureToggle}
+                  className={`justify-start ${
+                    theme === "cyberpunk" 
+                      ? "border-cyber-green text-cyber-green" 
+                      : ""
+                  }`}
+                >
+                  <Zap size={16} className="mr-2" />
+                  {theme === "cyberpunk" ? "Present" : "Future"}
+                </Button>
+                
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className={theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue justify-start" : "justify-start"}
+                  asChild
+                >
+                  <a href="https://geekpoints.app" target="_blank" rel="noopener noreferrer">
+                    <LinkIcon size={16} className="mr-2" />
+                    GeekPoints
+                  </a>
+                </Button>
+              </li>
             </ul>
           </nav>
         </div>

@@ -19,7 +19,7 @@ const teamMembers = [
     id: 2,
     name: "Ayush Yadav",
     role: "CHIEF OPERATIONAL OFFICER",
-    image: "/images/team/ayush-yadav.jpg",
+    image: "/images/team/ayush-yadav.png",
     social: {
       linkedin: "https://linkedin.com/in/priya-singh",
       github: "https://github.com/priya-singh",

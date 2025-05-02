@@ -42,7 +42,7 @@ const Navbar = () => {
         {/* Logo and Chapter Name */}
         <div className="flex items-center gap-2">
           <img 
-            src="/images/branding/gfg-logo.png" 
+            src="/images/branding/gfg-logo.jpeg" 
             alt="GeeksforGeeks Logo" 
             className="h-8 w-auto"
           />
@@ -105,7 +105,7 @@ const Navbar = () => {
             className={`hidden sm:flex ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
             asChild
           >
-            <a href="https://geekpoints.app" target="_blank" rel="noopener noreferrer">
+            <a href="https://geekpoints.vercel.app/" target="_blank" rel="noopener noreferrer">
               <LinkIcon size={16} className="mr-1" />
               GeekPoints
             </a>

@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const galleryImages = [
   {
     id: 1,
-    src: "/images/gallery/event1.jpg",
-    alt: "Workshop Session",
-    caption: "Python Workshop 2024"
+    src: "/images/branding/gfg-logo.jpeg",
+    alt: "Gfg in LPU",
+    caption: "GFG IN LPU"
   },
   {
     id: 2,

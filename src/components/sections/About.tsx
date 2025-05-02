@@ -23,7 +23,7 @@ const About = () => {
             </p>
             
             <p className={theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"}>
-              Founded in 2019, our chapter has been consistently working towards creating a vibrant ecosystem where students
+              Founded in 2025, our chapter has been consistently working towards creating a vibrant ecosystem where students
               can learn, practice, and excel in various domains of computer science.
             </p>
             
@@ -61,7 +61,7 @@ const About = () => {
           >
             <div className="aspect-video relative">
               <img
-                src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200326191711/How-to-Think-Like-a-Programmer.png"
+                src="/images/branding/gfg-logo.jpeg"
                 alt="GeeksforGeeks Community"
                 className="object-cover w-full h-full"
               />

@@ -45,7 +45,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/geeksforgeeks.lpu/" 
                 className={theme === "cyberpunk" ? "text-cyber-blue hover:text-cyber-green" : "text-gray-500 hover:text-primary"}
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

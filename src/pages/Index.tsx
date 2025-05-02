@@ -1,13 +1,51 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import { ThemeProvider } from "@/components/ThemeContext";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Achievements from "@/components/sections/Achievements";
+import Team from "@/components/sections/Team";
+import Events from "@/components/sections/Events";
+import Collaborate from "@/components/sections/Collaborate";
+import Gallery from "@/components/sections/Gallery";
+import Footer from "@/components/Footer";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Welcome toast
+    toast({
+      title: "Welcome to GFG LPU Chapter",
+      description: "Explore our website to learn more about us. Try the 'Future' button for a cyberpunk experience!",
+      duration: 5000,
+    });
+
+    // Preload cyber mode sound
+    const audio = new Audio("/cyber-mode-on.mp3");
+    audio.preload = "auto";
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <BackgroundAnimation />
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Achievements />
+          <Team />
+          <Events />
+          <Collaborate />
+          <Gallery />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

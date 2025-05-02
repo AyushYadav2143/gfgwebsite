@@ -17,9 +17,6 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Priya Singh",
-    role: "Technical Lead",
-    image: "/images/team/priya-singh.jpg",
     name: "Ayush Yadav",
     role: "CHIEF OPERATIONAL OFFICER",
     image: "/images/team/ayush-yadav.jpg",

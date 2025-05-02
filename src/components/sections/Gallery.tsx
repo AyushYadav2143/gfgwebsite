@@ -106,12 +106,17 @@ const Gallery = () => {
                 }`}
               >
                 <img
-                  src={image.src}
+                  src={image.src || "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"}
                   alt={image.alt}
                   className="h-48 sm:h-64 w-full object-cover transition-transform group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "/images/gallery/placeholder.jpg";
+                    // Fallback to an online image if the local placeholder fails
+                    target.onerror = () => {
+                      target.src = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5";
+                      target.onerror = null; // Prevent infinite loop
+                    };
                   }}
                 />
                 <div className={`absolute inset-x-0 bottom-0 ${

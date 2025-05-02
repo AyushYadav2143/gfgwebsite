@@ -76,12 +76,17 @@ const Events = () => {
             >
               <div className="relative aspect-video overflow-hidden rounded-t-lg">
                 <img 
-                  src={event.image} 
+                  src={event.image || "https://images.unsplash.com/photo-1518770660439-4636190af475"} 
                   alt={event.title}
                   className="h-full w-full object-cover transition-transform hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "/images/events/placeholder.jpg";
+                    // Fallback to an online image if the local placeholder fails
+                    target.onerror = () => {
+                      target.src = "https://images.unsplash.com/photo-1518770660439-4636190af475";
+                      target.onerror = null; // Prevent infinite loop
+                    };
                   }}
                 />
               </div>

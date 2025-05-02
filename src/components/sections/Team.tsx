@@ -1,6 +1,7 @@
 
 import { useTheme } from "../ThemeContext";
 import { Github, Linkedin, Instagram } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const teamMembers = [
   {
@@ -121,20 +122,25 @@ const Team = () => {
                 }`}
               >
                 <div className={theme === "cyberpunk" ? "bg-cyber-dark p-4 sm:p-6" : "p-4 sm:p-6"}>
-                  <div className="mx-auto h-28 w-28 sm:h-40 sm:w-40 overflow-hidden rounded-full">
+                  <div className="mx-auto h-28 w-28 sm:h-40 sm:w-40 overflow-hidden rounded-full relative">
                     <img 
-                      src={member.image} 
+                      src={member.image || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"} 
                       alt={member.name}
                       className="h-full w-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "/images/team/placeholder.jpg";
+                        // Fallback to an online image if the local placeholder fails
+                        target.onerror = () => {
+                          target.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
+                          target.onerror = null; // Prevent infinite loop
+                        };
                       }}
                     />
                   </div>
                   <div className="mt-4 text-center">
                     <h3 
-                      className={`text-xl font-bold ${
+                      className={`text-xl font-bold mb-2 ${
                         theme === "cyberpunk" ? "text-cyber-pink" : ""
                       }`}
                     >

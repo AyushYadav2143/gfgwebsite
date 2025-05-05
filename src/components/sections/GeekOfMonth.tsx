@@ -2,6 +2,7 @@
 import { useTheme } from "../ThemeContext";
 import { Badge, Award, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const geekOfMonth = {
   name: "Priya Verma",
@@ -52,30 +53,34 @@ const GeekOfMonth = () => {
               : ""
           }`}>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="relative overflow-hidden aspect-square md:aspect-auto">
-                <img 
-                  src={geekOfMonth.image} 
-                  alt={`${geekOfMonth.name} - Geek of the Month`}
-                  className="object-cover h-full w-full"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/team/placeholder.jpg";
-                    // Fallback to an online image if the local placeholder fails
-                    target.onerror = () => {
-                      target.src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158";
-                      target.onerror = null; // Prevent infinite loop
-                    };
-                  }}
-                />
-                <div className={`absolute top-4 left-4 ${
-                  theme === "cyberpunk" ? "animate-pulse" : ""
-                }`}>
-                  <div className={`rounded-full p-1.5 ${
-                    theme === "cyberpunk"
-                      ? "bg-cyber-pink border border-cyber-blue"
-                      : "bg-primary text-primary-foreground"
+              <div className="flex justify-center items-center p-6">
+                <div className={`relative ${
+                  theme === "cyberpunk" ? "border-2 border-cyber-pink p-1" : "border border-primary p-1"
+                } rounded-full w-48 h-48 md:w-64 md:h-64 overflow-hidden`}>
+                  <img 
+                    src={geekOfMonth.image} 
+                    alt={`${geekOfMonth.name} - Geek of the Month`}
+                    className="object-cover h-full w-full rounded-full"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "/images/team/placeholder.jpg";
+                      // Fallback to an online image if the local placeholder fails
+                      target.onerror = () => {
+                        target.src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158";
+                        target.onerror = null; // Prevent infinite loop
+                      };
+                    }}
+                  />
+                  <div className={`absolute top-2 left-2 ${
+                    theme === "cyberpunk" ? "animate-pulse" : ""
                   }`}>
-                    <Award className="h-6 w-6" />
+                    <div className={`rounded-full p-1.5 ${
+                      theme === "cyberpunk"
+                        ? "bg-cyber-pink border border-cyber-blue"
+                        : "bg-primary text-primary-foreground"
+                    }`}>
+                      <Award className="h-6 w-6" />
+                    </div>
                   </div>
                 </div>
               </div>

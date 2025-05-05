@@ -44,9 +44,9 @@ const teamMembers = [
     role: "Marketing Lead",
     image: "/images/team/aditi-jaiswal.jpeg",
     social: {
-      linkedin: "#",
-      github: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/-aditijaiswal/",
+      github: "https://github.com/Aditi0614",
+      instagram: "https://www.instagram.com/aditijaiswal.29/",
     }
   },
   {

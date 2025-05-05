@@ -6,6 +6,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Achievements from "@/components/sections/Achievements";
 import Team from "@/components/sections/Team";
+import GeekOfMonth from "@/components/sections/GeekOfMonth"; // Add import
 import Events from "@/components/sections/Events";
 import Collaborate from "@/components/sections/Collaborate";
 import Gallery from "@/components/sections/Gallery";
@@ -40,6 +41,7 @@ const Index = () => {
           <About />
           <Achievements />
           <Team />
+          <GeekOfMonth /> {/* Add the new section */}
           <Events />
           <Collaborate />
           <Gallery />

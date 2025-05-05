@@ -1,7 +1,5 @@
 
 import { useTheme } from "../ThemeContext";
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Sample gallery data - can be expanded to include more images
 const galleryImages = [
@@ -45,25 +43,6 @@ const galleryImages = [
 
 const Gallery = () => {
   const { theme } = useTheme();
-  const [currentPage, setCurrentPage] = useState(0);
-  const imagesPerPage = 3; // Show fewer images per page on mobile
-  
-  // Calculate total pages based on images array length
-  const totalPages = Math.ceil(galleryImages.length / imagesPerPage);
-  
-  // Get current images to display
-  const currentImages = galleryImages.slice(
-    currentPage * imagesPerPage, 
-    (currentPage + 1) * imagesPerPage
-  );
-
-  const nextPage = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevPage = () => {
-    setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
-  };
 
   return (
     <section id="gallery" className="py-16 md:py-24">
@@ -97,8 +76,8 @@ const Gallery = () => {
         </div>
 
         <div className="mx-auto mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {currentImages.map((image) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {galleryImages.map((image) => (
               <div 
                 key={image.id} 
                 className={`group relative overflow-hidden rounded-lg ${
@@ -130,37 +109,6 @@ const Gallery = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Pagination controls */}
-          <div className="mt-8 flex justify-center space-x-4">
-            <button
-              onClick={prevPage}
-              className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                theme === "cyberpunk"
-                  ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
-                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              }`}
-              aria-label="Previous page"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <div className={`flex items-center ${
-              theme === "cyberpunk" ? "text-cyber-green" : "text-muted-foreground"
-            }`}>
-              {currentPage + 1} / {totalPages}
-            </div>
-            <button
-              onClick={nextPage}
-              className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                theme === "cyberpunk"
-                  ? "bg-cyber-dark border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/20"
-                  : "bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              }`}
-              aria-label="Next page"
-            >
-              <ChevronRight size={20} />
-            </button>
           </div>
         </div>
       </div>

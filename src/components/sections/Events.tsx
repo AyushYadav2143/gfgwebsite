@@ -68,11 +68,11 @@ const Events = () => {
           </div>
         </div>
 
-        <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
+        <div className="mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {events.map(event => (
             <Card 
               key={event.id}
-              className={theme === "cyberpunk" ? "bg-cyber-dark border-cyber-purple/30" : ""}
+              className={`flex flex-col ${theme === "cyberpunk" ? "bg-cyber-dark border-cyber-purple/30" : ""}`}
             >
               <div className="relative aspect-video overflow-hidden rounded-t-lg">
                 <img 
@@ -90,7 +90,7 @@ const Events = () => {
                   }}
                 />
               </div>
-              <CardContent className="p-4 sm:p-6">
+              <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
                 <div className="mb-3 text-sm text-muted-foreground">
                   <span className={`block ${theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}`}>{event.date}</span>
                   <span className="block mt-1">{event.location}</span>
@@ -103,14 +103,14 @@ const Events = () => {
                   {event.title}
                 </h3>
                 <p 
-                  className={`mb-4 ${
+                  className={`mb-4 flex-grow ${
                     theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
                   }`}
                 >
                   {event.description}
                 </p>
                 <Button 
-                  className={`w-full sm:w-auto ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
+                  className={`w-full sm:w-auto mt-auto ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
                   asChild
                 >
                   <a href={event.registrationLink}>Register Now</a>

@@ -95,7 +95,7 @@ const Navbar = () => {
             onClick={handleFutureToggle}
           >
             <Zap size={16} className="mr-1" />
-            {theme === "cyberpunk" ? "Present" : "Future"}
+            {theme === "cyberpunk" ? "Normal" : "CyberPunk"}
           </Button>
           
           {/* GeekPoints Link */}

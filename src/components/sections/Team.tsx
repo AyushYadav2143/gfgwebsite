@@ -7,9 +7,9 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const teamMembers = [
   {
     id: 1,
-    name: "Ankit Sharma",
-    role: "Chapter Lead",
-    image: "/images/team/ankit-sharma.jpg",
+    name: "Aryaneel Shivam",
+    role: "Chapter Lead and CEO",
+    image: "/images/team/aryan-shivam.jpeg",
     social: {
       linkedin: "https://linkedin.com/in/ankit-sharma",
       github: "https://github.com/ankit-sharma",
@@ -19,8 +19,8 @@ const teamMembers = [
   {
     id: 2,
     name: "Ayush Yadav",
-    role: "CHIEF OPERATIONAL OFFICER",
-    image: "/images/team/ayush-yadav.png",
+    role: "COO",
+    image: "/images/team/ayush-yadav.jpeg",
     social: {
       linkedin: "https://linkedin.com/in/priya-singh",
       github: "https://github.com/priya-singh",
@@ -29,9 +29,9 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Rahul Verma",
-    role: "Event Coordinator",
-    image: "/images/team/rahul-verma.jpg",
+    name: "Ankit Kumar",
+    role: "Head Of Event Management",
+    image: "/images/team/ankit-kumar.jpeg",
     social: {
       linkedin: "https://linkedin.com/in/rahul-verma",
       github: "https://github.com/rahul-verma",
@@ -40,9 +40,9 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Neha Patel",
+    name: "Aditi Jaiswal",
     role: "Marketing Lead",
-    image: "/images/team/neha-patel.jpg",
+    image: "/images/team/aditi-jaiswal.jpeg",
     social: {
       linkedin: "https://linkedin.com/in/neha-patel",
       github: "https://github.com/neha-patel",
@@ -51,20 +51,20 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "Vikram Kumar",
+    name: "Himanshi Chawla",
     role: "Content Creator",
-    image: "/images/team/vikram-kumar.jpg",
+    image: "/images/team/himanshi-chawla.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/vikram-kumar",
-      github: "https://github.com/vikram-kumar",
-      instagram: "https://instagram.com/vikram-kumar",
+      linkedin: "https://www.linkedin.com/in/himanshichawla/",
+      github: "https://github.com/himanshii26",
+      instagram: "https://www.instagram.com/_.himanshiiii.__?igsh=MWk1eHV4MTF5bHZpbw%3D%3D&utm_source=qr",
     }
   },
   {
     id: 6,
-    name: "Shweta Jain",
+    name: "Jaya Chaurasia",
     role: "Design Head",
-    image: "/images/team/shweta-jain.jpg",
+    image: "/images/team/jaya-chaurasiya.jpeg",
     social: {
       linkedin: "https://linkedin.com/in/shweta-jain",
       github: "https://github.com/shweta-jain",

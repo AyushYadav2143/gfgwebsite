@@ -2,6 +2,13 @@
 import { useTheme } from "../ThemeContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 // Sample events data - can be expanded to include more events
 const events = [
@@ -68,56 +75,84 @@ const Events = () => {
           </div>
         </div>
 
-        <div className="mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
-          {events.map(event => (
-            <Card 
-              key={event.id}
-              className={`flex flex-col ${theme === "cyberpunk" ? "bg-cyber-dark border-cyber-purple/30" : ""}`}
-            >
-              <div className="relative aspect-video overflow-hidden rounded-t-lg">
-                <img 
-                  src={event.image || "https://images.unsplash.com/photo-1518770660439-4636190af475"} 
-                  alt={event.title}
-                  className="h-full w-full object-cover transition-transform hover:scale-105"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/events/placeholder.jpg";
-                    // Fallback to an online image if the local placeholder fails
-                    target.onerror = () => {
-                      target.src = "https://images.unsplash.com/photo-1518770660439-4636190af475";
-                      target.onerror = null; // Prevent infinite loop
-                    };
-                  }}
-                />
-              </div>
-              <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
-                <div className="mb-3 text-sm text-muted-foreground">
-                  <span className={`block ${theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}`}>{event.date}</span>
-                  <span className="block mt-1">{event.location}</span>
-                </div>
-                <h3 
-                  className={`text-xl font-bold mb-2 ${
-                    theme === "cyberpunk" ? "text-cyber-pink" : ""
-                  }`}
-                >
-                  {event.title}
-                </h3>
-                <p 
-                  className={`mb-4 flex-grow ${
-                    theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
-                  }`}
-                >
-                  {event.description}
-                </p>
-                <Button 
-                  className={`w-full sm:w-auto mt-auto ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
-                  asChild
-                >
-                  <a href={event.registrationLink}>Register Now</a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mx-auto mt-12 max-w-6xl">
+          <Carousel 
+            className={`w-full ${
+              theme === "cyberpunk" ? "cyber-carousel" : ""
+            }`}
+            opts={{
+              align: "start",
+            }}
+          >
+            <CarouselContent>
+              {events.map(event => (
+                <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                  <Card 
+                    className={`h-full flex flex-col ${theme === "cyberpunk" ? "bg-cyber-dark border-cyber-purple/30" : ""}`}
+                  >
+                    <div className="relative aspect-video overflow-hidden rounded-t-lg">
+                      <img 
+                        src={event.image || "https://images.unsplash.com/photo-1518770660439-4636190af475"} 
+                        alt={event.title}
+                        className="h-full w-full object-cover transition-transform hover:scale-105"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/images/events/placeholder.jpg";
+                          // Fallback to an online image if the local placeholder fails
+                          target.onerror = () => {
+                            target.src = "https://images.unsplash.com/photo-1518770660439-4636190af475";
+                            target.onerror = null; // Prevent infinite loop
+                          };
+                        }}
+                      />
+                    </div>
+                    <CardContent className="p-4 sm:p-6 flex flex-col flex-grow">
+                      <div className="mb-3 text-sm text-muted-foreground">
+                        <span className={`block ${theme === "cyberpunk" ? "text-cyber-green" : "text-primary"}`}>{event.date}</span>
+                        <span className="block mt-1">{event.location}</span>
+                      </div>
+                      <h3 
+                        className={`text-xl font-bold mb-2 ${
+                          theme === "cyberpunk" ? "text-cyber-pink" : ""
+                        }`}
+                      >
+                        {event.title}
+                      </h3>
+                      <p 
+                        className={`mb-4 flex-grow ${
+                          theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
+                        }`}
+                      >
+                        {event.description}
+                      </p>
+                      <Button 
+                        className={`w-full sm:w-auto mt-auto ${theme === "cyberpunk" ? "bg-cyber-purple hover:bg-cyber-blue" : ""}`}
+                        asChild
+                      >
+                        <a href={event.registrationLink}>Register Now</a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious 
+              className={`hidden md:flex -left-12 md:-left-16 ${
+                theme === "cyberpunk" ? "bg-cyber-dark border-cyber-blue text-cyber-blue hover:bg-cyber-dark/80" : ""
+              }`}
+            />
+            <CarouselNext 
+              className={`hidden md:flex -right-12 md:-right-16 ${
+                theme === "cyberpunk" ? "bg-cyber-dark border-cyber-blue text-cyber-blue hover:bg-cyber-dark/80" : ""
+              }`}
+            />
+          </Carousel>
+          
+          <div className="mt-6 text-center">
+            <p className={`text-sm ${theme === "cyberpunk" ? "text-cyber-green" : "text-muted-foreground"}`}>
+              {events.length} upcoming events • Use arrows to navigate
+            </p>
+          </div>
         </div>
       </div>
     </section>

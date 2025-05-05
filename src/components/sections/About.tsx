@@ -18,13 +18,11 @@ const About = () => {
             </h2>
             
             <p className={theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"}>
-              GeeksforGeeks LPU Chapter is a student-led technical community that aims to foster technical learning, innovation, 
-              and collaboration among students at Lovely Professional University.
+            The GeeksforGeeks Student Chapter fosters a collaborative tech community by enhancing coding skills, problem-solving, and career readiness through workshops, hackathons, and mentorship, while also exploring revenue generation via sponsorships, paid workshops, and industry collaborations. (Technical Workshops & Bootcamps, Hackathons & Coding Competitions, Tech Talks & Guest Lectures, Mock Interviews & Placement Prep, Open-Source & Project Showcases, Revenue-Generating Activities.)
             </p>
             
             <p className={theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"}>
-              Founded in 2025, our chapter has been consistently working towards creating a vibrant ecosystem where students
-              can learn, practice, and excel in various domains of computer science.
+            Organize coding competitions, hackathons, and workshops on key tech topics like algorithms, web development, and entrepreneurship. Facilitate mentorship programs for technical interview prep, open-source contributions, and real-world projects. Build a collaborative learning community with opportunities for students to monetize skills through freelance work and industry collaborations.
             </p>
             
             <h3 

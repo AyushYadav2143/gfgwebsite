@@ -33,9 +33,9 @@ const teamMembers = [
     role: "Head Of Event Management",
     image: "/images/team/ankit-kumar.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/rahul-verma",
-      github: "https://github.com/rahul-verma",
-      instagram: "https://instagram.com/rahul-verma",
+      linkedin: "https://www.linkedin.com/in/ankit-kumar-809a14216/",
+      github: "https://github.com/Ankitj2024",
+      instagram: "https://www.instagram.com/ankit.k__xd/",
     }
   },
   {

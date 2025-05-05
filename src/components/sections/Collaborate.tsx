@@ -184,7 +184,7 @@ const Collaborate = () => {
               Fill out the form below and we'll get back to you within 48 hours.
             </p>
             
-            <form className="mt-6 space-y-4">
+            <form  className="mt-6 space-y-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label 
@@ -293,7 +293,7 @@ const Collaborate = () => {
                     }`} 
                   />
                 </div>
-                <span>gfg.lpuchapter@gmail.com</span>
+                <span>geeksforgeekslpu.contact@gmail.com</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -308,7 +308,7 @@ const Collaborate = () => {
                     }`} 
                   />
                 </div>
-                <span>+91 98765 43210</span>
+                <span>+91 9161704150</span>
               </div>
               
               <div className="flex items-center space-x-3">
@@ -323,7 +323,7 @@ const Collaborate = () => {
                     }`} 
                   />
                 </div>
-                <span>@gfg_lpu on Discord</span>
+                <span>@gfg_lpu</span>
               </div>
             </div>
           </div>

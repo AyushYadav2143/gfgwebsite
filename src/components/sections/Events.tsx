@@ -39,6 +39,7 @@ const events = [
     description: "48-hour coding competition with exciting prizes and networking opportunities.",
     registrationLink: "#"
   }
+  
 ];
 
 const Events = () => {

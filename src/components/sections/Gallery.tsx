@@ -16,36 +16,7 @@ const galleryImages = [
     alt: "Gfg in LPU",
     caption: "GFG IN LPU"
   },
-  {
-    id: 2,
-    src: "/images/gallery/event2.jpg",
-    alt: "Hackathon Winners",
-    caption: "Hackathon Winners 2024"
-  },
-  {
-    id: 3,
-    src: "/images/gallery/event3.jpg",
-    alt: "Team Building Activity",
-    caption: "Team Building Session"
-  },
-  {
-    id: 4,
-    src: "/images/gallery/event4.jpg",
-    alt: "Guest Lecture",
-    caption: "Industry Expert Session"
-  },
-  {
-    id: 5,
-    src: "/images/gallery/event5.jpg",
-    alt: "Code Competition",
-    caption: "Coding Competition 2024"
-  },
-  {
-    id: 6,
-    src: "/images/gallery/event6.jpg",
-    alt: "Community Meetup",
-    caption: "GFG LPU Community Meetup"
-  }
+  
 ];
 
 const Gallery = () => {

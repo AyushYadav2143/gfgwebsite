@@ -11,9 +11,9 @@ const teamMembers = [
     role: "Chapter Lead and CEO",
     image: "/images/team/aryan-shivam.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/ankit-sharma",
+      linkedin: "https://www.linkedin.com/in/aryaneelshivam/",
       github: "https://github.com/ankit-sharma",
-      instagram: "https://instagram.com/ankit-sharma",
+      instagram: "https://www.instagram.com/aryaneelshivam/",
     }
   },
   {
@@ -52,7 +52,7 @@ const teamMembers = [
   {
     id: 5,
     name: "Himanshi Chawla",
-    role: "Content Creator",
+    role: "Head Of Content Creator",
     image: "/images/team/himanshi-chawla.jpeg",
     social: {
       linkedin: "https://www.linkedin.com/in/himanshichawla/",
@@ -66,9 +66,9 @@ const teamMembers = [
     role: "Design Head",
     image: "/images/team/jaya-chaurasiya.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/shweta-jain",
-      github: "https://github.com/shweta-jain",
-      instagram: "https://instagram.com/shweta-jain",
+      linkedin: "https://www.linkedin.com/in/jaya-chourasia/",
+      github: "https://github.com/Jaya0925",
+      instagram: "https://www.instagram.com/_.justjayaa/",
     }
   },
   // You can add more team members here following the same structure

@@ -38,7 +38,9 @@ const Hero = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
+            
+            <Button 
+              onClick={() => window.location.href = "https://chat.whatsapp.com/ErfbjedrYAjLL9KwH2aHiM"}
               className={theme === "cyberpunk" ? "bg-cyber-green text-black hover:bg-cyber-green/80" : ""}
               size="lg"
             >

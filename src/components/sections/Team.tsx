@@ -3,6 +3,7 @@ import { useTheme } from "../ThemeContext";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
+// Team members array - you can add as many members as needed following this structure
 const teamMembers = [
   {
     id: 1,
@@ -70,6 +71,21 @@ const teamMembers = [
       instagram: "https://instagram.com/shweta-jain",
     }
   },
+  // You can add more team members here following the same structure
+  // Example:
+  /*
+  {
+    id: 7,
+    name: "New Member",
+    role: "Position",
+    image: "/images/team/member-image.jpg",
+    social: {
+      linkedin: "https://linkedin.com/in/member-name",
+      github: "https://github.com/member-name",
+      instagram: "https://instagram.com/member-name",
+    }
+  },
+  */
 ];
 
 const Team = () => {
@@ -107,6 +123,7 @@ const Team = () => {
         </div>
 
         <div className="mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+          {/* Map through all team members dynamically */}
           {teamMembers.map((member) => (
             <div 
               key={member.id}

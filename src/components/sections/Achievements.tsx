@@ -5,26 +5,26 @@ import { Trophy, Award, Star, Users } from "lucide-react";
 const achievements = [
   {
     id: 1,
-    title: "Best Coding Club Award 2023",
-    description: "Recognized as the best coding club in the university for promoting technical excellence.",
+    title: "Most Popular Tech Community at LPU",
+    description: "One of the most active and tech-driven student communities fostering innovation and growth.",
     icon: Trophy,
   },
   {
     id: 2,
-    title: "1000+ Active Members",
-    description: "Built a thriving community with over 1000 active student members.",
+    title: " Transparent Functioning with GeekPoints",
+    description: "The only organization at LPU with a transparent, points-based system to track contributions.",
     icon: Users,
   },
   {
     id: 3,
-    title: "50+ Technical Workshops",
-    description: "Conducted over 50 technical workshops on various technology domains.",
+    title: "Gamified Promotion Strategy",
+    description: "Promotions are earned through a fun, gamified system that rewards real participation",
     icon: Award,
   },
   {
     id: 4,
-    title: "National Hackathon Winners",
-    description: "Our members won multiple prizes at national level hackathons.",
+    title: "Backed by GeeksforGeeks",
+    description: "Proudly supported by one of the most prominent and trusted names in the tech industry — GeeksforGeeks.",
     icon: Star,
   },
 ];
@@ -58,7 +58,7 @@ const Achievements = () => {
                 theme === "cyberpunk" ? "text-gray-300" : "text-muted-foreground"
               }`}
             >
-              Celebrating our milestones and accomplishments over the years.
+              Celebrating our milestones and accomplishments over the time.
             </p>
           </div>
         </div>

@@ -14,29 +14,29 @@ import {
 const events = [
   {
     id: 1,
-    title: "Code Wizards Workshop",
-    date: "May 15, 2025",
-    location: "Block 32, Room 205, LPU",
+    title: "Something big is coming..",
+    date: "",
+    location: "",
     image: "/images/events/code-wizards.jpg",
-    description: "Learn about algorithms and data structures with hands-on coding exercises.",
+    description: " Exciting and grand events are on the horizon — stay tuned for unforgettable experiences and tech-filled adventures!",
     registrationLink: "#"
   },
   {
     id: 2,
-    title: "Web Development Bootcamp",
-    date: "May 20, 2025",
-    location: "Block 38, Room 103, LPU",
+    title: "Something big is coming..",
+    date: "",
+    location: "",
     image: "/images/events/web-dev.jpg",
-    description: "Intensive workshop on modern web development techniques and frameworks.",
+    description: " Exciting and grand events are on the horizon — stay tuned for unforgettable experiences and tech-filled adventures!",
     registrationLink: "#"
   },
   {
     id: 3,
-    title: "Hackathon 2025",
-    date: "June 5-7, 2025",
-    location: "Uni Mall, LPU",
+    title: "Something big is coming..",
+    date: "",
+    location: "",
     image: "/images/events/hackathon.jpg",
-    description: "48-hour coding competition with exciting prizes and networking opportunities.",
+    description: " Exciting and grand events are on the horizon — stay tuned for unforgettable experiences and tech-filled adventures!",
     registrationLink: "#"
   }
   

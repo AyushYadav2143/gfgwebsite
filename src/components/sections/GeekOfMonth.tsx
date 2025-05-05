@@ -5,11 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const geekOfMonth = {
-  name: "Priya Verma",
+  name: "Gnana Abhinash Devireddy",
   achievement: "Highest GeekPoints Scorer - May 2025",
-  points: 2580,
-  image: "/images/geek-of-month/priya-verma.jpg",
-  description: "Priya has demonstrated exceptional skills in algorithm challenges and actively contributed to three community workshops this month."
+  points: 35,
+  image: "/images/geek-of-month/geekofthemonth.jpeg",
+  description: "Gnana Abhinash Devireddy is awarded the title of Geek of the Month for his exceptional dedication and organizational skills. From the very beginning, he has meticulously handled all paperwork and ensured every document is in order. His seamless management of both online and offline records has been a backbone to our team's efficiency."
 };
 
 const GeekOfMonth = () => {

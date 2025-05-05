@@ -323,7 +323,7 @@ const Collaborate = () => {
                     }`} 
                   />
                 </div>
-                <span>@gfg_lpu</span>
+                <span>geeksforgeeks.lpu</span>
               </div>
             </div>
           </div>

@@ -22,9 +22,9 @@ const teamMembers = [
     role: "COO",
     image: "/images/team/ayush-yadav.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/priya-singh",
-      github: "https://github.com/priya-singh",
-      instagram: "https://instagram.com/priya-singh",
+      linkedin: "https://www.linkedin.com/in/4yushyadav/",
+      github: "https://github.com/AyushYadav2143",
+      instagram: "https://www.instagram.com/4yu5hh/",
     }
   },
   {
@@ -44,15 +44,15 @@ const teamMembers = [
     role: "Marketing Lead",
     image: "/images/team/aditi-jaiswal.jpeg",
     social: {
-      linkedin: "https://linkedin.com/in/neha-patel",
-      github: "https://github.com/neha-patel",
-      instagram: "https://instagram.com/neha-patel",
+      linkedin: "#",
+      github: "#",
+      instagram: "#",
     }
   },
   {
     id: 5,
     name: "Himanshi Chawla",
-    role: "Head Of Content Creator",
+    role: "Head Of Content Creation",
     image: "/images/team/himanshi-chawla.jpeg",
     social: {
       linkedin: "https://www.linkedin.com/in/himanshichawla/",
@@ -62,7 +62,7 @@ const teamMembers = [
   },
   {
     id: 6,
-    name: "Jaya Chaurasia",
+    name: "Jaya Chourasia",
     role: "Design Head",
     image: "/images/team/jaya-chaurasiya.jpeg",
     social: {
@@ -110,7 +110,7 @@ const Team = () => {
                 theme === "cyberpunk" ? "neon-text-purple" : ""
               }`}
             >
-              Meet the Team
+              Meet the Core
             </h2>
             <p 
               className={`mx-auto max-w-[700px] text-lg ${

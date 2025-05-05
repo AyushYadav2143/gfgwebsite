@@ -166,7 +166,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="https://geekpoints.app" 
+                  href="https://geekpoints.vercel.app/" 
                   className={theme === "cyberpunk" ? "text-gray-300 hover:text-cyber-green" : "hover:text-primary"}
                 >
                   GeekPoints

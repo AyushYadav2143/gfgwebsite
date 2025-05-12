@@ -12,10 +12,17 @@ import {
 const galleryImages = [
   {
     id: 1,
+    src: "/images/events/decoded-ebook.PNG",
+    alt: "Boost Your DSA Skills Free!",
+    caption: "Boost Your DSA Skills Free!"
+  },
+  {
+    id: 2,
     src: "/images/branding/gfg-logo.jpeg",
     alt: "Gfg in LPU",
     caption: "GFG IN LPU"
   },
+  
   
 ];
 

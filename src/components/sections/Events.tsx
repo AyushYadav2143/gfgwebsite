@@ -14,12 +14,12 @@ import {
 const events = [
   {
     id: 1,
-    title: "Something big is coming..",
+    title: "Boost Your DSA Skills Free!",
     date: "",
     location: "",
-    image: "/images/events/code-wizards.jpg",
-    description: " Exciting and grand events are on the horizon — stay tuned for unforgettable experiences and tech-filled adventures!",
-    registrationLink: "#"
+    image: "/images/events/decoded-ebook.PNG",
+    description: "⚡️Exciting news from GeeksforGeeks Student Chapter, LPU! We're launching a free expert-curated DSA E-book packed with a DSA Cheat Sheet, bonus content, and revision material to boost your prep.🔥 Don't miss this limited-time chance to level up your coding skills for placements. 🚀 Stay tuned for more masterclasses, resources & developer growth sessions!",
+    registrationLink: "https://forms.gle/hy6Ju8stxweBoEbC6"
   },
   {
     id: 2,
